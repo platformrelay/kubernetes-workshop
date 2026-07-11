@@ -304,7 +304,7 @@ layout: recap
 heading: 'Recap — data that outlives the Pod'
 story: 'The sentinel file survived a Pod delete because the PVC outlived the Pod — storage has its own lifecycle.'
 compact: true
-next: 'S12 · StatefulSet — stable identity + per-Pod storage (volumeClaimTemplates)'
+next: 'StatefulSet — stable identity + per-Pod storage (volumeClaimTemplates)'
 ---
 
 - The container filesystem and **`emptyDir`** are **ephemeral** — gone when the Pod is
@@ -318,7 +318,7 @@ next: 'S12 · StatefulSet — stable identity + per-Pod storage (volumeClaimTemp
   schedules** — normal, not a failure
 - Swapping `emptyDir` → `persistentVolumeClaim` leaves the container mount **unchanged** —
   storage is pluggable behind the mount
-- Next: give each replica its **own** identity and volume with a **StatefulSet** (S12)
+- Next: give each replica its **own** identity and volume with a **StatefulSet**
 
 <!--
 Speaker: the takeaway they'll reach for in an incident: "my data vanished" is almost always

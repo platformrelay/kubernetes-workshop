@@ -382,7 +382,7 @@ which happens to a Pod that very much exists. That contrast is the recap questio
 layout: recap
 heading: 'Recap — reserve, cap, and know the enforcement path'
 story: 'The OOMKilled container came back (RESTARTS 1); the Pod that broke the quota never existed at all — runtime vs admission enforcement.'
-next: 'S14 · Health probes — readiness, liveness, startup, and how they gate traffic vs restart'
+next: 'Health probes — readiness, liveness, startup, and how they gate traffic vs restart'
 ---
 
 - **requests** drive **scheduling** (reserve + hold); **limits** drive **enforcement** (runtime ceiling)

@@ -176,7 +176,7 @@ lab: labs/day-2/14-probes.md
 
 ````md magic-move
 ```yaml
-# 1: the web container as S07 left it — "Running" the instant nginx's process starts
+# 1: the web container as the Service section left it — "Running" the instant nginx's process starts
 containers:
   - name: web
     image: nginx:1.27
@@ -398,7 +398,7 @@ the Events. That's the muscle memory the lab builds.
 layout: recap
 heading: 'Recap — Running is a floor, not a promise'
 story: 'Deleting one Pod''s readiness file drained it with zero downtime; pointing liveness at a dead port bounced the container until we fixed it — same symptom, opposite cure.'
-next: 'S15 · Jobs & CronJobs — workloads that run to completion, not forever'
+next: 'Jobs & CronJobs — workloads that run to completion, not forever'
 ---
 
 - **readiness** gates traffic (in/out of the EndpointSlice) · **liveness** restarts the

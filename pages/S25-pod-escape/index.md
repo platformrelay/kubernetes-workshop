@@ -241,7 +241,7 @@ spec:
 ```
 
 ```yaml
-# 2: +the four restricted gates (S17), pinned to a real non-root UID.
+# 2: +the four restricted gates (Pod security), pinned to a real non-root UID.
 spec:
   containers:
     - name: shell
@@ -442,7 +442,7 @@ category on your own criteria — this workshop endorses none. Keep it vendor-ne
 layout: recap
 heading: 'Recap — you saw the escape so you could close it'
 story: 'A privileged Pod with the host root mounted read the node''s filesystem. Then one namespace label — enforce: restricted — rejected that exact Pod at admission, before it could ever exist.'
-next: 'Day 3 security track complete — image hygiene (S02), pod security (S17), network policy (S18), and the escape they defend against, all one story'
+next: 'Day 3 security track complete — image hygiene, pod security, network policy, and the escape they defend against, all one story'
 ---
 
 - A container is a **process on the host kernel**, not a VM — isolation is *configuration*, and the
@@ -450,8 +450,8 @@ next: 'Day 3 security track complete — image hygiene (S02), pod security (S17)
 - The escape levers: **`privileged`**, **`hostPath: /`**, **`hostPID`/`hostNetwork`**, the
   **runtime socket**, **`SYS_ADMIN`/`SYS_PTRACE`** — each hands over a piece of the host
 - **`restricted` PSA is the primary block** — it forbids every one of those settings and rejects
-  the Pod **at admission, before it exists** (S17)
-- **Defence in depth:** image hygiene (S02) + restricted admission (S17) + NetworkPolicy (S18) +
+  the Pod **at admission, before it exists**
+- **Defence in depth:** image hygiene + restricted admission + NetworkPolicy +
   image scanning + runtime detection — no single layer is enough
 - Go deeper with **NSA/CISA Hardening Guidance** and **MITRE ATT&CK for Containers**; the lab does
   this **kind-only, defensively** — demonstrate access, then block it

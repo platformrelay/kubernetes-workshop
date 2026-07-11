@@ -351,7 +351,7 @@ they'll run a Job, schedule a CronJob, and force a failure into BackoffLimitExce
 layout: recap
 heading: 'Recap — some work is supposed to finish'
 story: 'The report Job exited 0 and stayed Complete; wrapped in a CronJob it reran every night — a Deployment would have looped it forever.'
-next: 'S16 · Autoscaling (HPA) — scale a running Deployment on live CPU demand'
+next: 'Autoscaling (HPA) — scale a running Deployment on live CPU demand'
 ---
 
 - **Job** = run-to-completion: exit 0 is success, nothing restarts; **CronJob** = a Job factory on a `schedule`

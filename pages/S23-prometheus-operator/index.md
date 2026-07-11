@@ -109,7 +109,7 @@ Next: the mental model, called back to S22 explicitly.
 Recall the equation: **operator = CRD + custom controller running observe → diff → act.** Here the
 **CRDs** are `ServiceMonitor`/`PodMonitor` (your intent) and the **controller** is the Prometheus
 Operator. Its **"act"** step is: *turn the CRs into a live Prometheus scrape config.* You met the
-pattern in S22 with an illustrative `Backup`; this is the same pattern, **shipped and running in
+pattern earlier with an illustrative `Backup`; this is the same pattern, **shipped and running in
 production everywhere.**
 
 </div>
@@ -483,13 +483,13 @@ This is the query the learner runs against their own app in the lab. Next: recap
 ---
 layout: recap
 heading: 'Recap — declare monitoring intent; let the operator write the config'
-story: 'Hand-editing scrape config against ephemeral Pods is impossible. So monitoring became declarative: you apply a ServiceMonitor CR that selects a Service by label and names its metrics port, and the Prometheus Operator — the S22 pattern shipped for real — watches it and generates the scrape config. The target appears in Prometheus, and one rate() query turns the scraped counter into a live request rate.'
-next: 'S24 · Operator dev 101 — you''ve USED operators (cert-manager, Prometheus); now peek at building one with kubebuilder'
+story: 'Hand-editing scrape config against ephemeral Pods is impossible. So monitoring became declarative: you apply a ServiceMonitor CR that selects a Service by label and names its metrics port, and the Prometheus Operator — the operator pattern shipped for real — watches it and generates the scrape config. The target appears in Prometheus, and one rate() query turns the scraped counter into a live request rate.'
+next: 'Operator dev 101 — you''ve USED operators (cert-manager, Prometheus); now peek at building one with kubebuilder'
 ---
 
 - **The problem:** ephemeral Pods make **static scrape config** unmaintainable — monitoring must be
   **declarative and label-driven**, like everything else in Kubernetes
-- **S22 made concrete:** the **Prometheus Operator** watches `ServiceMonitor`/`PodMonitor` CRs and
+- **The operator pattern made concrete:** the **Prometheus Operator** watches `ServiceMonitor`/`PodMonitor` CRs and
   **generates the scrape config** — CRD + controller, exactly the operator equation
 - **Four CRDs** in `monitoring.coreos.com/v1`: **`Prometheus`** (the server), **`ServiceMonitor`**
   (targets via a Service), **`PodMonitor`** (targets by Pod), **`Alertmanager`** (alert routing)

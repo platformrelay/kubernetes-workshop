@@ -252,7 +252,7 @@ showRefresher: true
 
 <div class="mt-4 kw-muted text-sm">
 
-That's enough to start. **Sections S01–S02 go deep** on images, layers,
+That's enough to start. **The container sections go deep** on images, layers,
 runtimes, and hardening — flip <code>showRefresher: false</code> in this slide's
 frontmatter to hide this beat for a stronger cohort.
 

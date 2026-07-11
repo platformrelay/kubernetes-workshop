@@ -288,7 +288,7 @@ watches the gate flip from Forbidden to created.
 <span class="kw-kicker">so the image has to actually be non-root</span>
 
 Either the image sets a non-root `USER` (this is exactly the **non-root image you built in
-S02**), or you pin `runAsUser` to a real non-root UID the image can run as. We use
+container security**), or you pin `runAsUser` to a real non-root UID the image can run as. We use
 `nginxinc/nginx-unprivileged` — it ships as UID **101** and listens on **8080**, so the promise
 holds and the Pod runs.
 
@@ -395,7 +395,7 @@ the whole loop the learner runs in Lab 17.
 layout: recap
 heading: 'Recap — least privilege, and who enforces it when'
 story: 'The insecure Pod was refused before it existed (admission); the same Pod, hardened, walked straight in. readOnlyRootFilesystem then broke the app at runtime — a different layer, a different fix.'
-next: 'S18 · NetworkPolicy — the network complement: default-deny pod-to-pod traffic and explicit allows'
+next: 'NetworkPolicy — the network complement: default-deny pod-to-pod traffic and explicit allows'
 ---
 
 - **`securityContext`** = what the Pod asks to be; **Pod Security Standards** = privileged →
@@ -406,7 +406,7 @@ next: 'S18 · NetworkPolicy — the network complement: default-deny pod-to-pod 
   that write to `/` (fix with an `emptyDir`)
 - **PSA = namespace labels** (`enforce`/`warn`/`audit`), built in — `warn` first, then `enforce`
 - Two layers: **admission** rejects before the Pod exists (PSA); the **kubelet** enforces at
-  runtime (`runAsNonRoot` on a root image → CrashLoop) — sets up **S25** pod-escape defences
+  runtime (`runAsNonRoot` on a root image → CrashLoop) — sets up **pod-escape** defences
 
 <!--
 Speaker: land the two-layer mental model, because it's the thread through the rest of Day 3.
